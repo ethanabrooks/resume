@@ -1,0 +1,89 @@
+% !TeX program = xelatex
+% Run with XeLaTeX
+% You can change the base color of this cv by altering the RGB values of \definecolor{maincolor}{RGB}{102, 204, 51} in class file:  cv-roald.cls. It will automatically define a darker and lighter shade of this color. The darker shade is used for the background of the header, the lighter for the contact details in the header and the maincolor is used for the titles. 
+
+\documentclass[]{resume}
+\usepackage{hyperref}
+\urlstyle{same}
+
+\begin{document}
+\pagestyle{empty} %to remove the page numbers
+
+% This is the header of the first page, which contains your name and contact details. 
+% \sep inserts a | between items. 
+% You can use FontAwesome icons and use \FAspace after a font awesome icon to insert a predefined horizontal space after a font awesome icon icon.
+\header{Ethan}{Brooks}
+{\faMobile \hspace{\FAspace} 717 380 9441 
+\sep 
+\faEnvelope 
+\hspace{\FAspace} 
+ethanabrooks@gmail.com 
+\sep 
+\faLinkedinSquare
+\hspace{\FAspace}
+\url{https://www.linkedin.com/in/ethan-brooks/}
+}
+
+\section*{Education}
+% Use tabularcv environment to make a two column environment, left one for dates, right one for details of your education for example. 
+% You can use the command \worktitle{Study name/Job title}{Location}.
+% You can use the environment tabitemize to make a bulletpoint list inside the tabularcv environment.
+\begin{tabularcv}
+    Dece 2016 & \worktitle{University of Pennsylvania}
+    {Master of Computer and Information Technology}
+\\[\vspacepar] % Start new row with this
+    May 2010 & \worktitle{St. John's College, Annapolis}{Bachelor of Arts in Philosophy and History of Mathematics}
+\end{tabularcv}   
+
+\section*{Machine Learning Courses and Skills}
+\begin{tabularx}{\textwidth}{ @{}lXXXX }
+    \worktitle{Courses}{} & \worktitle{Frameworks}{} & \worktitle{Languages}{} & \worktitle{Software}{} & \worktitle{Functional}{}
+    \\
+    Intro to Machine Learning & Tensorflow & Python & ROS  & Haskell
+    \\
+    Integrated Intelligence for Robotics & Torch & Lua & CUDA & Ocaml
+    \\
+    GPU programming and architecture & Scikit-learn & C/C++ & Docker & Coq
+    \\
+\end{tabularx}
+
+\section*{Research/Projects}
+\begin{tabularcv}
+Dec 2016    &  \worktitle{Computational Graph Program (Rust)}
+\newline Optimizes arbitrary functions using backpropogation. Uses CUDA and CUBLAS to perform operations on matrices. Supports implementation of deep learning architectures. 
+\url{https://github.com/lobachevzky/computational-graph}
+\\[\vspacepar] % Start new row with this
+Spring 2016    & \worktitle{Applying Neural Turing Machines to Headline Generation (Theano/Tensorflow)}
+\newline Research under Dr. Lyle Ungar to adapt Neural Turing Machines to sequence-to-sequence modeling in order to generate headlines from single sentence excerpts. 
+\url{https://github.com/lobachevzky/headlines}
+\\[\vspacepar] % Start new row with this
+May 2015    & \worktitle{fx-predictor (OCaml)}
+\newline Predicts up/down financial currency movements using original implementation of Naïve-Bayes algorithm.
+\url{https://github.com/Lobachevzky/fx-predictor}
+\end{tabularcv}   
+
+\section*{Work Experience}
+\begin{tabularcv}
+Fall 2017  & \worktitle{University of Michigan, Research Assistant under Satinder Singh}
+\newline Researching one-shot learning in the domain of reinforcement learning and robotics.
+\\[\vspacepar] % Start new row with this
+Summer 2017  & \worktitle{Google, Intern with Android Location and Context team}
+\newline Using machine learning to determine the most battery-efficient times for Android location scans.
+\\[\vspacepar] % Start new row with this
+Spring 2017 & \worktitle{Georgia Tech Research Institute, Research Intern}
+\newline Researched applications of policy gradient methods to quadcopter navigation. Developed programs for training robots with TRPO/A3C algorithms, using Ros and Gazebo.
+\\[\vspacepar] % Start new row with this
+Summer 2016 & \worktitle{Apple, Intern with Siri Natural Language Team}{}
+\newline Built attention-based deep-learning algorithms in Torch in order to improve sentence classification. Streamlined word classification architectures using Scikit-Learn (SVM, Boosted Decision Tree, etc.). 
+\\[\vspacepar] % Start new row with this
+2010 – 2015 & \worktitle{United States Marine Corps, Intelligence Officer (Captain)}
+\newline Established a new intelligence section that oversaw intelligence analysis and security management. Led up to 20 Marines at a time, supervising work, planning training, and mentoring.
+\end{tabularcv}   
+\section*{Notable Achievements}
+\begin{itemize}[leftmargin=*]
+    \item Presented numerous publications at weekly Penn NLP and Computational Neuroscience seminars. 
+    \item  Published "Hazing Versus Challenging" in the August 2014 edition of the Marine Corps Gazette. Discussed the tendency for hazing to proliferate in environments where Marines are not challenged.
+    \item Awarded St. John’s College “Prize for the Most Elegant Solution of a Geometric Problem.”
+\end{itemize}
+
+\end{document}
