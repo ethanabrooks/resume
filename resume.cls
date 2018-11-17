@@ -33,7 +33,7 @@
 \RequirePackage{xcolor} % Enables the use of colours
 \RequirePackage[margin= \margin]{geometry} % Adjust the margins of a page
 \defaultfontfeatures{ % Important to add, else fontawesome will not work with XeLaTeX 
-    Path = Fonts/}
+	Path = Fonts/}
 \RequirePackage{fontawesome} % Load cool icons, such as the linked in logo
 \RequirePackage{calc} % To calculate lengths, for example the skip after the header
 \RequirePackage{tabularx} % For tables
@@ -60,19 +60,19 @@
 % --------------------------------- %
 %	 			FONTS 	 			%
 % --------------------------------- %
-\setmainfont{Raleway}[ 
+\setmainfont{Raleway}[
 	Path = Fonts/,
 	Extension = .otf ,
-    UprightFont = *-Light,
-    ItalicFont = *-Light-Italic,
-    BoldFont = *-SemiBold,]    
+	UprightFont = *-Light,
+	ItalicFont = *-Light-Italic,
+	BoldFont = *-SemiBold,]
 
-\newfontfamily\titlefont{Raleway}[ 
+\newfontfamily\titlefont{Raleway}[
 	Path = Fonts/,
 	Extension = .otf,
 	UprightFont = *-ExtraLight,
-    BoldFont = *-SemiBold,
-    ]        
+	BoldFont = *-SemiBold,
+]
 
 % --------------------------------- %
 %	 			COLORS	 			%
@@ -87,25 +87,25 @@
 \newcommand{\sep}{\hspace{\hspaddress} | \hspace{\hspaddress}}
 
 \newcommand{\header}[4]{%
-% #1 First name
-% #2 Last name
-% #3 = Address
-% #4 = Phone, mail and LinkedIn
-  \begin{tikzpicture}[remember picture, overlay]
-    % Colored bar on top of the page
-    \node [below right, fill=darkermain, minimum height=\hdrheight, minimum width=\paperwidth, outer sep=0] (name) at (current page.north west) {};
-    % Node for the name
-    \node[anchor=base, text=white, inner sep=0.25 cm] (nametext) at (name.base) {%
-          \fontsize{40pt}{32pt}\color{white}%
-          {\titlefont #1~}{\titlefont #2\par}
-          };
-    % Address
-    \node[anchor=north, text=lightermain] (address) at (nametext.south)  {#3 \par};
-    % Phone/mail/nationality
-    \node[anchor=north, text=lightermain] at (address.south)  {#4};
-  \end{tikzpicture}
-  \vspace{\hdrskip}
-} 
+	% #1 First name
+	% #2 Last name
+	% #3 = Address
+	% #4 = Phone, mail and LinkedIn
+	\begin{tikzpicture}[remember picture, overlay]
+		% Colored bar on top of the page
+		\node [below right, fill=darkermain, minimum height=\hdrheight, minimum width=\paperwidth, outer sep=0] (name) at (current page.north west) {};
+		% Node for the name
+		\node[anchor=base, text=white, inner sep=0.25 cm] (nametext) at (name.base) {%
+			\fontsize{40pt}{32pt}\color{white}%
+			{\titlefont #1~}{\titlefont #2\par}
+		};
+		% Address
+		\node[anchor=north, text=lightermain] (address) at (nametext.south)  {#3 \par};
+		% Phone/mail/nationality
+		\node[anchor=north, text=lightermain] at (address.south)  {#4};
+	\end{tikzpicture}
+	\vspace{\hdrskip}
+}
 
 % --------------------------------- %
 % 			TITLE FORMAT 			%
@@ -116,10 +116,10 @@
 \titlespacing*{\section}{0pt}{1.5ex plus 0.2ex minus .2ex}{-0.5ex plus .2ex}
 
 \newcommand{\worktitle}[2]{
-% #1 = Job or education title 
-% #2 = Company and location
-    {\bfseries\MakeUppercase{#1}}  
-    {\itshape #2}
+	% #1 = Job or education title 
+	% #2 = Company and location
+	{\bfseries\MakeUppercase{#1}}
+		{\itshape #2}
 }
 
 % --------------------------------- %
@@ -127,14 +127,14 @@
 % --------------------------------- %
 % New environment with two columns, one narrow one on the left dates and what was done during that period in the right wider column
 \newenvironment{tabularcv}{
-	\tabularx{\textwidth}{@{}>{\raggedright\arraybackslash}p{\LeftColBody}@{}>{\raggedright\arraybackslash}p{\RightColBody}}}{
-	\endtabularx}
+\tabularx{\textwidth}{@{}>{\raggedright\arraybackslash}p{\LeftColBody}@{}>{\raggedright\arraybackslash}p{\RightColBody}}}{
+\endtabularx}
 
 % Use bullet point lists inside a tabular environment	
 \newenvironment{tabitemize}{
 	\itemize}{
 	\vspace*{-\baselineskip}
-		\enditemize}	
+	\enditemize}
 
 % --------------------------------- %
 %		BODY TEXT OPTIONS			%
