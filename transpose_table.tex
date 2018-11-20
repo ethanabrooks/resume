@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[showframe]{geometry}
+
+
+\usepackage{booktabs,array}
+\def\Midrule{\midrule[\heavyrulewidth]}
+\newcount\rowc
+
+\makeatletter
+\def\ttabular{%
+\bgroup
+
+\def\headerrule {\ifnum\rowc=\@ne \hrule height 1.3pt \fi}
+
+\def\headerrule{
+\ifnum\rowc=1\hrule height 1.3pt \else
+\ifnum\rowc=6\hrule height \heavyrulewidth 
+   \else \hrule height \lightrulewidth\fi\fi}
+
+\valign\bgroup
+
+\hbox to 10em{\strut \hfill##\hfill}
+
+&&
+\hbox to 10em{\strut\hfill##\hfill}%
+\cr}
+
+\def\endttabular{% 
+\crcr\egroup\egroup}
+
+
+\begin{document}
+
+\centering
+
+\noindent
+\begin{ttabular}
+\bfseries Name & Alice & Bob & Chuck & Dave & Eve\cr
+\bfseries Sex & Female & Male & Male & Male & Female\cr
+\bfseries Age & 18 & 19 & 20 & 21 & 22\cr
+\end{ttabular}
+
+
+
+\bigskip
+
+Which I want to look like
+
+\bigskip
+
+\begin{tabular}{*3c}\toprule
+\bfseries Name & \bfseries Sex & \bfseries Age\\\Midrule
+Alice & Female & 18\\\midrule
+Bob & Male & 19\\\midrule
+Chuck & Male & 20\\\midrule
+Dave & Male & 21\\\midrule
+Eve & Female & 22\\\bottomrule
+\end{tabular}
+
+
+\end{document}
