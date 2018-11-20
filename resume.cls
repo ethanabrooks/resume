@@ -130,6 +130,7 @@
 \tabularx{\textwidth}{@{}>{\raggedright\arraybackslash}p{\LeftColBody}@{}>{\raggedright\arraybackslash}p{\RightColBody}}}{
 \endtabularx}
 
+
 % Use bullet point lists inside a tabular environment	
 \newenvironment{tabitemize}{
 	\itemize}{
